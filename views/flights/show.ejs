@@ -8,44 +8,65 @@
     <div>Flight Number: </div>
     <div><%= flight.flightNo %></div>
     <div>Departing: </div>
+    <div><%= flight.departs %></div>
     <div>Departs: </div>
     <div><%= flight.departs ? 'Yes' : 'Nope' %></div>
   </section>
 
-<br><br><h2>Reviews</h2>
+<br><br><h2>Destinations</h2>
+
 <form id="add-review-form" method="POST"
   action="/flights/<%= flight._id %>/reviews">
-  <label>Destinations:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <!-- <option value="1">1</option>
+  <label>Airport:</label>
+  <!-- <select name="rating"> -->
+    <select name="airport">
+        <option value="LAX" selected>LAX</option>
+        <option value="DEN">DEN</option>
+        <option value="BWI">BWI</option>
+        <option value="SAN">SAN</option>
+      </select>
+  <label>Airline:</label>
+   <select name="airline">
+      <option value="Delta">Delta</option>
+      <option value="United">United</option>
+      <option value="American">American</option>
+      <option value="Southwest">Southwest</option>
+    </select>
+    <label>Flight Number:</label>
+        <input type="Number" name="flightNo">
+       <!-- <br>  -->
+    <label>Arrivals:</label>
+      <input type="datetime-local" name="arrival">
+      <!-- <br> -->
+
+ 
+     <!-- <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
-    <option value="5" selected>5</option> -->
+    <option value="5" selected>5</option>  -->
   </select>
-  <input type="submit" value="Add Review">
+  <input type="submit" value="Destination">
 </form>
 
 <% if (flight.destinations.length) { %>
   <table>
     <thead>
       <tr>
-        <th>Date</th>
+        <!-- <th>Date</th>
         <th>Review</th>
-        <th>Rating</th>
+        <th>Rating</th> -->
       </tr>
     </thead>
     <tbody>
-      <% flight.destinations.forEach(function(r) { %>
+      <!-- <% flight.destinations.forEach(function(r) { %>
         <tr>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td><%= r.rating %></td>
         </tr>
       <% }); %>
-    </tbody>
+    </tbody> -->
   </table>
 <% } else { %>
   <h5>No Reviews Yet</h5>

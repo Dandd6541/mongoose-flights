@@ -9,7 +9,8 @@ const destinationSchema = new Schema({
    
    },
    arrival: {
-      type: Date
+      type: Date,
+      default: Date.now() + 365*24*60*60000
    }
 });
 
