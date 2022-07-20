@@ -37,6 +37,7 @@
        <!-- <br>  -->
     <label>Arrivals:</label>
       <input type="datetime-local" name="arrival">
+      <a href="/tickets/new"></a>
       <!-- <br> -->
 
  
@@ -73,5 +74,20 @@
   <% } else { %>
     <h5>No Destinations Yet</h5>
   <% } %>
-  
+  <h1>Purchase a Ticket</h1>
+    <button> <a href= "/flights/<%= flight._id %>/tickets/new">Buy A Ticket</button>
+      <table>
+        <tbody>
+          <thead>
+            <th>Seat</th>
+            <th>Price</th>
+          </thead>
+          <% tickets.forEach(function(t) { %>
+            <tr>
+              <td><%= t.seat %></td>
+              <td><%= t.price %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+        </table>
 <%- include('../partials/footer') %>
