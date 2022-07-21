@@ -11,7 +11,18 @@ const destinationSchema = new Schema({
    arrival: {
       type: Date,
       default: Date.now() + 365*24*60*60000
-   }
+   },
+   airline: {
+    type: String,
+    enum: ['Delta', 'United', 'American', 'Southwest']
+   },
+
+   flightNo: {
+    type: Number,
+    required: true,
+    min: 10,
+    max: 999
+   } 
 });
 
 const flightSchema = new Schema({

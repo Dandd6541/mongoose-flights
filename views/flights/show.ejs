@@ -19,34 +19,27 @@
 action="/flights/<%= flight._id %>/destinations"> 
 
   <label>Airport:</label>
-  <!-- <select name="rating"> -->
     <select name="airport">
         <option value="LAX" selected>LAX</option>
         <option value="DEN">DEN</option>
         <option value="BWI">BWI</option>
         <option value="SAN">SAN</option>
       </select>
+
   <label>Airline:</label>
    <select name="airline">
       <option value="Delta">Delta</option>
       <option value="United">United</option>
       <option value="American">American</option>
       <option value="Southwest">Southwest</option>
+      
     </select>
-    <label>Flight Number:</label>
+    <label>Flight Number:
         <input type="Number" name="flightNo">
-       <!-- <br>  -->
+      </label>
     <label>Arrivals:</label>
       <input type="datetime-local" name="arrival">
       <a href="/tickets/new"></a>
-      <!-- <br> -->
-
- 
-     <!-- <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>  -->
   </select>
   <input type="submit" value="Destination">
 </form>
